@@ -59,7 +59,7 @@ export default {
 	border-radius: 50%;
 	opacity: 0;
 	transition: opacity 0.5s; /* 过渡 */
-	margin-bottom: var(--window-bottom); /* css变量 */
+	/* margin-bottom: var(--window-bottom); */ /* css变量 */
 }
 
 /* 适配 iPhoneX */

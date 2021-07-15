@@ -126,7 +126,7 @@
 			sticky: Boolean // 是否支持sticky,默认false; 当值配置true时,需避免在mescroll-body标签前面加非定位的元素,否则下拉区域无法会隐藏
 		},
 		mounted() {
-			console.log(22212);
+			
 		},
 		computed: {
 			// mescroll最小高度,默认windowHeight,使列表不满屏仍可下拉

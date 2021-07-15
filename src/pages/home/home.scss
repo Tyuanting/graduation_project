@@ -1,5 +1,5 @@
 .page{
-	padding-bottom: 100rpx;
+	// padding-bottom: 100rpx;
 	background-color: #FFFFFF;
 }
 .head-info{
@@ -18,7 +18,7 @@
 	/* #endif */
 	
 	background-size: 100% 433rpx;
-	background-color: #288851;
+	background: linear-gradient(to left,$base,$assist-clor);
 	overflow: hidden;
 	.head-search{
 		display: flex;
@@ -138,11 +138,9 @@
 	.menu-nav{
 		position: relative;
 		width: 100%;
-		height: 300rpx;
 		margin:30rpx auto;
 		.nav-list{
 			white-space: nowrap; 
-			height: 270rpx;
 			width: 100%;
 			.nav{
 				display: inline-block;
@@ -150,7 +148,6 @@
 				flex-direction: column;
 				flex-wrap: wrap;
 				justify-content: space-between;
-				height: 270rpx;
 			}
 			.list{
 				display: flex;
@@ -193,6 +190,313 @@
 					height: 100%;
 					border-radius: 6rpx;
 					background-color: $base;
+				}
+			}
+		}
+	}
+	/* 通知 */
+	.inform{
+		padding: 0 25rpx;
+		height: 130rpx;
+		// margin: 30rpx auto;
+		border-bottom: 16rpx solid #f9f9f9;
+		.inform-info{
+			display: flex;
+			padding: 0 20rpx;
+			height: 70rpx;
+			background-color: #f7f7f7;
+			border-radius: 10rpx;
+			.picture{
+				width: 20%;
+				height: 100%;
+				image{
+					width: 93rpx;
+					height: 84rpx;
+					margin-top: -20rpx;
+				}
+			}
+			.info{
+				width: 80%;
+				height: 100%;
+				.swiper{
+					width: 100%;
+					height: 100%;
+					.swiper-item{
+						display: flex;
+						align-items: center;
+						width: 100%;
+						height: 100%;
+						text{
+							font-size: 28rpx;
+							color: #848281;
+						}
+					}
+				}
+			}
+		}
+	}	
+	.flash-good{
+		display: flex;
+		align-items: center;
+		padding: 0 25rpx;
+		height: 320rpx;
+		background-color: #FFFFFF;
+		border-bottom: 16rpx solid #f9f9f9;
+		.flash-sale{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			.line{
+				position: absolute;
+				right: 0;
+				top: 50%;
+				width: 2rpx;
+				height: 80%;
+				background-color: #f9f9f9;
+				transform: translate(0,-50%);
+			}
+			.flash-title{
+				display: flex;
+				align-items: center;
+				// justify-content: space-between;
+				width: 100%;
+				height: 80rpx;
+				.pictrue{
+					display: flex;
+					align-items: center;
+					height: 100%;
+					image{
+						width: 118rpx;
+						height: 28rpx;
+					}
+				}
+				.date-time{
+					display: flex;
+					align-items: center;
+					margin-left: 50rpx;
+					.time{
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						width: 40rpx;
+						height: 40rpx;
+						background-color: $price-clor;
+						font-size: 24rpx;
+						color: #FFFFFF;
+						border-radius: 6rpx;
+					}
+					.da{
+						font-size: 34rpx;
+						color: #212121;
+						margin: 0 6rpx;
+					}
+				}
+			}
+			.goods-list{
+				display: flex;
+				width: 100%;
+				height: 220rpx;
+				.list{
+					width: 50%;
+					height: 100%;
+					.pictrue{
+						width: 100%;
+						height: 70%;
+						image{
+							width: 150rpx;
+							height: 150rpx;
+						}
+					}
+					.price{
+						display: flex;
+						align-items: center;
+						width: 100%;
+						height: 30%;
+						.selling-price{
+							font-size: 28rpx;
+							font-weight: bold;
+							color: $price-clor;
+						}
+						.original-price{
+							font-size: 24rpx;
+							text-decoration: line-through;
+							color: #bbbaba;
+							margin-left: 10rpx;
+						}
+					}
+				}
+			}
+		}
+		.good-choice{
+			width: 50%;
+			height: 100%;
+			.goods-title{
+				display: flex;
+				align-items: center;
+				padding: 0 20rpx;
+				height: 80rpx;
+				.title{
+					display: flex;
+					align-items: center;
+					text{
+						font-size: 28rpx;
+						color: #4c4b4b;
+					}
+				}
+				.describe{
+					display: flex;
+					align-items: center;
+					margin-left: 10rpx;
+					text{
+						font-size: 24rpx;
+						color: #979696;
+					}
+					.num{
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						margin: 0 6rpx;
+						width: 30rpx;
+						height: 30rpx;
+						background-color: $price-clor;
+						color: #FFFFFF;
+						border-radius: 6rpx;
+					}
+				}
+			}
+			.goods-list{
+				display: flex;
+				width: 100%;
+				height: 220rpx;
+				.list{
+					width: 50%;
+					height: 100%;
+					.pictrue{
+						width: 100%;
+						height: 70%;
+						image{
+							width: 150rpx;
+							height: 150rpx;
+						}
+					}
+					.price{
+						display: flex;
+						align-items: center;
+						width: 100%;
+						height: 30%;
+						.selling-price{
+							font-size: 28rpx;
+							font-weight: bold;
+							color: $price-clor;
+						}
+						.original-price{
+							font-size: 24rpx;
+							text-decoration: line-through;
+							color: #bbbaba;
+							margin-left: 10rpx;
+						}
+					}
+				}
+			}
+		}
+	}
+	/* 为你推荐*/
+	.recommend-info{
+		width: 100%;
+		background-color: #f2f2f2;
+		.recommend-title{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100rpx;
+			.title{
+				display: flex;
+				align-items: center;
+				image{
+					width: 416rpx;
+					height: 40rpx;
+				}
+			}
+		}
+		.goods-list{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 0 30rpx;
+			.list{
+				width: 49%;
+				height: 540rpx;
+				margin-bottom: 20rpx;
+				background-color: #FFFFFF;
+				border-radius: 10rpx;
+				overflow: hidden;
+				.pictrue{
+					display: flex;
+					justify-content: center;
+					width: 100%;
+					image{
+						height: 350rpx;
+					}
+				}
+				.title-tag{
+					// display: flex;
+					height: 100rpx;
+					padding: 20rpx;
+					.tag{
+						float: left;
+						margin-right: 10rpx;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						display: -webkit-box;
+						-webkit-line-clamp: 2;
+						-webkit-box-orient: vertical;
+						white-space: normal;
+						font-size: 26rpx;
+						line-height: 40rpx;
+						text{
+							font-size: 24rpx;
+							color: #FFFFFF;
+							padding: 4rpx 16rpx;
+							background: linear-gradient(to right,$base,$change-clor);
+							border-radius: 6rpx;
+							margin-right: 10rpx;
+						}
+					}
+				}
+				.price-info{
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					justify-content: space-between;
+					padding: 0 20rpx;
+					height: 80rpx;
+					.user-price{
+						display: flex;
+						align-items: center;
+						text{
+							color: $price-clor;
+						}
+						.min{
+							font-size: 24rpx;
+						}
+						.max{
+							font-size: 32rpx;
+						}
+					}
+					.vip-price{
+						display: flex;
+						align-items: center;
+						image{
+							width: 26rpx;
+							height: 26rpx;
+							margin-right: 10rpx;
+						}
+						text{
+							color: #fcb735;
+							font-size: 24rpx;
+						}
+					}
 				}
 			}
 		}

@@ -2,7 +2,7 @@
 	<view class="page">
 		<view class="my-top">
 			<!-- head -->
-		<view class="head" :style="'background-color: rgba(255,255,255,'+(scrollTop/50)+');'">
+			<view class="head" :style="'background-color: rgba(255,255,255,'+(scrollTop/50)+');'">
 				<view class="portrait">
 					<image v-show="scrollTop>20" src="//img11.360buyimg.com/jdphoto/s40x40_jfs/t1/25255/18/10701/1678/5c89f892E78c04688/684d63c0d68e39b1.png"></image>
 				</view>
@@ -18,34 +18,23 @@
 					</view>
 				</view>
 			</view>
-			<!-- 用户信息 -->
-			<view class="user-info" style="display: none">
-				<view class="portrait">
-					<image src="http://img2.imgtn.bdimg.com/it/u=1039075865,3371165857&fm=26&gp=0.jpg"></image>
-				</view>
-				<view class="info">
-					<view class="nickname">
-						<text>爱跳舞的汤姆</text>
-					</view>
-					<view class="rank">
-						<image src="/static/rank.png"></image>
-						<text>v1</text>
-					</view>
-				</view>
-			</view>
 			<view class="user-info" @click="onUserInfo">
-			  <view class="portrait">
+			  <view class="portrait" v-show="!hasLogin">
 			    <image src="http://img2.imgtn.bdimg.com/it/u=1039075865,3371165857&fm=26&gp=0.jpg"></image>
 			  </view>
+				<view class="portrait" v-show="hasLogin">
+				  <image src="../../static/login.jpeg"></image>
+				</view>
 			  <view class="info">
 			    <view class="nickname">
-			      <text>登录/注册</text>
+			      <text v-if="!hasLogin">登录/注册</text>
+			      <text v-else>{{uerInfo.nickName}}({{uerInfo.uPhone}})</text>
 			    </view>
 			  </view>
 			</view>
 			<!-- 关注区 -->
 			<view class="focus-area">
-				<view class="list" @click="onCollect('goods')">
+				<view class="list">
 					<view class="num">
 						<text>28</text>
 					</view>
@@ -53,7 +42,7 @@
 						<text>商品关注</text>
 					</view>
 				</view>
-				<view class="list" @click="onCollect('content')">
+				<view class="list">
 					<view class="num">
 						<text>28</text>
 					</view>
@@ -61,7 +50,7 @@
 						<text>喜欢的内容</text>
 					</view>
 				</view>
-				<view class="list" @click="onCollect('record')">
+				<view class="list">
 					<view class="num">
 						<text>...</text>
 					</view>
@@ -71,13 +60,13 @@
 				</view>
 			</view>
 			<!-- 会员 -->
-				<view class="vip-info" @click="onMmeberVip">
+				<view class="vip-info">
 					<view class="vip">
-						<text>超级会员</text>
+						<text>每日签到</text>
 						<text class="line"></text>
 					</view>
 					<view class="vip-explain">
-						<text>成为超级会员，优惠多多！</text>
+						<text>参与平台活动，领优惠券！</text>
 					</view>
 					<view class="vip-btn">
 						<text>立即查看</text>
@@ -89,7 +78,7 @@
 				<view class="list" @click="onSkipOrder(1)">
 					<view class="icon">
 						<text class="iconfont icon-daifukuan"></text>
-						<text class="num">22</text>
+						<!-- <text class="num">22</text> -->
 					</view>
 					<view class="title">
 						<text>待付款</text>
@@ -98,7 +87,7 @@
 				<view class="list" @click="onSkipOrder(2)">
 					<view class="icon">
 						<text class="iconfont icon-daifahuo"></text>
-						<!-- <text class="num">22</text> -->
+						<text class="num" v-if="num>0">{{num}}</text>
 					</view>
 					<view class="title">
 						<text>待发货</text>
@@ -119,25 +108,33 @@
 						<!-- <text class="num">22</text> -->
 					</view>
 					<view class="title">
-						<text>退换</text>
+						<text>理赔</text>
 					</view>
 				</view>
 			</view>
 			<!-- 我的服务 -->
 			<view class="my-service">
 				<view class="title">
-					<text>我的定制</text>
+					<text>定制管理</text>
 				</view>
 				<view class="service-list">
-					<view class="list" @click="onServer('feedback')">
+					<view class="list" @click="toMyCustom()">
 						<view class="thumb">
 							<image src="/static/dzdd.png"></image>
+						</view>
+						<view class="name">
+							<text>我的定制</text>
+						</view>
+					</view>
+					<view class="list" @click="toCustomOrder()">
+						<view class="thumb">
+							<image src="/static/subtitle_unblock_light.png"></image>
 						</view>
 						<view class="name">
 							<text>定制订单</text>
 						</view>
 					</view>
-					<view class="list" @click="onServer('serve')">
+					<view class="list">
 						<view class="thumb">
 							<image src="/static/szzt.png"></image>
 						</view>
@@ -147,27 +144,95 @@
 					</view>
 				</view>
 			</view>
-			
 		</view>
 	</view>
 </template>
 
 <script>
 	import TabBar from '../../components/TabBar/TabBar.vue';
+	import {  mapState, mapMutations } from 'vuex';
 	export default{
 		components:{
 			TabBar,
 		},
+		computed: mapState(['hasLogin','uerInfo']),
 		data(){
 			return{
 				scrollTop: 0,
+				num:''
 			}
+		},
+		onLoad() {
+			if(uni.getStorageSync('orderList')!=='undefined'){
+				this.num = uni.getStorageSync('orderList').length
+			}	
 		},
 		onPageScroll(e) {
 			this.scrollTop = e.scrollTop;
 		},
 		mounted() {
 			// console.log(this.scrollTop)
+		},
+		methods:{
+			
+			// 用户信息点击
+			onUserInfo(){
+				if(this.hasLogin){
+					uni.navigateTo({
+						url:"/pages/Information/Information"
+					})
+				}else{
+					 uni.navigateTo({ 
+			    url: '/pages/login/login'
+			  })
+				} 
+			},
+			toMyCustom(){
+				if(!this.hasLogin){
+					uni.navigateTo({
+						url:"../login/login"
+					})
+				}else{
+					uni.navigateTo({
+						url: '/pages/MyCustom/MyCustom'
+					});
+				}
+			},
+			toCustomOrder(){
+				uni.navigateTo({
+					url:"../CustomOrder/CustomOrder"
+				})
+			},
+			/**
+			 * 点击设置
+			 */
+			onSetting(){
+				uni.navigateTo({
+					url:"../Setting/Setting"
+				})
+			},
+			/**
+			 * 点击消息
+			 */
+			onMessage(){
+				uni.navigateTo({
+					url:"../DiscountsActivity/DiscountsActivity"
+				})
+			},
+			/**
+			 * 订单
+			 */
+			onSkipOrder(type){
+				if(type === 5){
+					uni.navigateTo({
+						url: '/pages/AfterSalesOrder/AfterSalesOrder',
+					})
+					return;
+				}
+				uni.navigateTo({
+					url: '/pages/MyOrderList/MyOrderList?type=' + type,
+				})
+			},
 		}
 	}
 </script>

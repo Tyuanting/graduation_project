@@ -19,6 +19,7 @@
 // 分类列表
 .classify-list {
 	display: flex;
+	justify-content: space-around;
 	flex-wrap: wrap;
 	padding: 10rpx 25rpx;
 	background-color: #ffffff;
@@ -29,8 +30,9 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		width: 20%;
+		width: 19%;
 		height: 150rpx;
+		border: 1px solid #ddd;
 		.thumb {
 			display: flex;
 			align-items: center;
@@ -55,96 +57,7 @@
 		}
 	}
 }
-// 超值爆款
-.super-hot-style {
-	width: 100%;
-	background-color: #ffffff;
-	border-radius: 20rpx;
-	.hot-title {
-		display: flex;
-		align-items: center;
-		padding: 0 4%;
-		height: 80rpx;
-		.iconfont {
-			font-size: 38rpx;
-			color: $base;
-		}
-		.title {
-			font-size: 30rpx;
-			color: #212121;
-			margin-left: 10rpx;
-		}
-	}
-	.goods-list {
-		display: flex;
-		flex-wrap: wrap;
-		padding: 0 4%;
-		padding-bottom: 20rpx;
-		.list {
-			width: 32%;
-			margin-right: 2%;
-			.thumb {
-				width: 100%;
-				image {
-					width: 100%;
-				}
-			}
-			.title {
-				display: flex;
-				width: 100%;
-				padding: 10rpx 0;
-				text {
-					color: #212121;
-					font-size: 26rpx;
-				}
-			}
-			.price {
-				padding: 10rpx 0;
-				.sales-volume {
-					font-size: 24rpx;
-					color: #c0c0c0;
-					margin-top: 5rpx;
-				}
-				.retail-price {
-					width: 100%;
-					display: flex;
-					align-items: center;
-					.min {
-						display: inline-block;
-						font-size: 24rpx;
-						color: $price-clor;
-						transform: scale(0.8);
-					}
-					,
-					.max {
-						font-size: 26rpx;
-						color: $price-clor;
-						font-weight: bold;
-					}
-				}
-				.vip-price {
-					display: flex;
-					align-items: center;
-					.min {
-						display: inline-block;
-						font-size: 24rpx;
-						color: #212121;
-					}
-					,
-					.max {
-						font-size: 24rpx;
-						color: #212121;
-						font-weight: bold;
-						margin-right: 10rpx;
-					}
-				}
-			}
-		}
-		.list:nth-child(3n) {
-			margin-right: 0;
-		}
-	}
-}
+
 // 更多热卖
 .more-hot {
 	width: 100%;
@@ -157,7 +70,7 @@
 		height: 100rpx;
 		.title {
 			font-size: 32rpx;
-			color: $base;
+			color: #F43F3B;
 			.icon {
 				margin: 0 20rpx;
 			}

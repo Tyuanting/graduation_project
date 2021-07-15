@@ -135,10 +135,10 @@
 			 */
 			onCancel(){
 				this.hide();
-				this.reject({
-					value: this.options.value,
-					isConfirm: true,
-				});
+				// this.reject({
+				// 	value: this.options.value,
+				// 	isConfirm: true,
+				// });
 			},
 			/**
 			 * 确定点击

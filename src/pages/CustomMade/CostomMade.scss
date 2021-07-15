@@ -1,0 +1,120 @@
+.page{
+	position: absolute;
+	width: 100%;
+	// height: 100%;
+	padding-bottom: 100rpx;
+	// background-color: #f6f6f6;
+}
+.first-item{
+
+	width: 94%;
+	
+	border-radius: 20rpx;
+	background-color: #FFFFFF;
+	margin: 20rpx auto;
+	padding: 0 20rpx;
+	.req-list{
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		height: 200rpx;
+		border-bottom: 2rpx solid #f6f6f6;
+		.title{
+			height: 200rpx;
+			display: flex;
+			.title-req{
+				padding-top: 20rpx;
+			}
+			text{
+				font-size: 28rpx;
+				color: #434343;
+			}
+		}
+		.more-content{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 75%;
+			image{
+				width: 100rpx;
+				height: 100rpx;
+				border-radius: 100%;
+			}
+			.req-content{
+				height: 160rpx;
+				font-size: 28rpx;
+				color: #222222;
+			}
+		}
+	}
+	.list{
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		height: 100rpx;
+		border-bottom: 2rpx solid #f6f6f6;
+		.title{
+			display: flex;
+			align-items: center;
+			text{
+				font-size: 28rpx;
+				color: #434343;
+			}
+		}
+		.more-content{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 75%;
+			image{
+				width: 100rpx;
+				height: 100rpx;
+				border-radius: 100%;
+			}
+			.address-content{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+			}
+			.content{
+				font-size: 28rpx;
+				color: #222222;
+			}
+			.more{
+				font-size: 28rpx;
+				color: #222222;
+				margin-left: 20rpx;
+			}
+			.price{
+				font-size: 28rpx;
+				color: #23be9f;
+				font-weight: bold;
+			}
+		}
+	}
+}
+/* 按钮 */
+	.btn-info{
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  width: 100%;
+	  height: 100rpx;
+	  .btn{
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    width: 90%;
+	    height: 80rpx;
+	    background: #23be9f;
+	    border-radius: 10rpx;
+	    color: #FFFFFF;
+	    font-size: 28rpx;
+	    opacity: 1;
+	  }
+	}

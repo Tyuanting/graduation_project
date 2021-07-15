@@ -1,0 +1,96 @@
+.tab-top {
+	background-color: #ffffff;
+	height: 100upx;
+	display: flex;
+	border-bottom: 1px solid #bdbdbd;
+}
+.tab-no {
+	font-size: 30upx;
+	flex: 1;
+	text-align: center;
+	color: #c9c9c9;
+	height: 100upx;
+	line-height: 100upx;
+}
+.tab-selected {
+	color: #11b054;
+	border-bottom: 4upx solid #11b054;
+}
+.o-list{
+	width: 94%;
+	border-radius: 20rpx;
+	background-color: #FFFFFF;
+	margin: 20rpx auto;
+	.o-list-item{
+	border-bottom: 1px solid #C0C0C0;
+	height: 170rpx;
+	display: flex;
+	padding: 10px;
+	box-sizing: border-box;
+	.o-list-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding-left: 10px;
+		width: 100%;
+		
+		line-height: 1.2;
+		.o-list-content-title {
+			font-size: 32rpx;
+			font-weight: bold;
+			.o-list-content-num{
+				font-size: 28rpx;
+				color: #f47012;
+			}
+		}
+		.o-list-content-status{
+			font-size: 24rpx;
+			color: #458bd0;
+		}
+		.o-list-content-des {
+			display: flex;
+			justify-content: space-between;
+			.o-list-content-peasant{
+				margin-left: 10rpx;
+				font-size: 24rpx;
+			}
+			.o-list-content-price{
+				font-size: 36rpx;
+				font-weight: bold;
+			}
+			.peasant-icon{
+				color: #11b054;
+			}
+			.des-img{
+				width: 40rpx;
+				height: 40rpx;
+			
+			}
+		}
+		
+	}
+	
+}
+}
+.btn{
+		display: flex;
+		justify-content: flex-end;
+		.btn-group{
+			display: flex;
+			justify-content: space-around;
+			padding:20rpx;
+			width: 55%;
+			.btn-refresh{
+				border-color: #f47012;
+				color: #f47012;
+			}
+		}
+		button{
+			width: 160rpx;
+			height: 60rpx;
+			line-height: 60rpx;
+			font-size: 24rpx;
+			border-radius: 50rpx;
+			margin: 0;
+		}
+	}

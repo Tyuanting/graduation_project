@@ -1,0 +1,58 @@
+.page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 100rpx;
+
+	// background-color: #f6f6f6;
+}
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.select-form {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	width: 100%;
+	.selected {
+		border: 1px solid #abb8c2;
+		border-radius: 100rpx;
+		padding-left: 50rpx;
+		font-size: 32rpx;
+		height: 80rpx;
+		width: 70%;
+	}
+	.submit {
+		height: 80rpx;
+		width: 30%;
+		
+		button{
+			height: 80rpx;
+			background-color: #23be9f;
+		color: #fff;
+		}
+	}
+}
+
+.logo {
+	height: 200rpx;
+	width: 200rpx;
+	margin-top: 200rpx;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50rpx;
+}
+
+.text-area {
+	display: flex;
+	justify-content: center;
+}
+
+.title {
+	font-size: 36rpx;
+	color: #8f8f94;
+}
